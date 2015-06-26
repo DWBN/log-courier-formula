@@ -5,13 +5,18 @@ ppa-sauce:
       - pkg: log-courier
 
 
+log-courier-pkg:
+  pkg.installed:
+    - name: log-courier
 
-log-courier:
-  pkg.installed
+log-courier-service:
+  service.running:
+    - name: log-courier
+    - enable: True
+    - reload: True
+    - watch:
+      - pkg: log-courier
 
-
-log-courier:
-  service.running
 
 
 /etc/log-courier/selfsigned.crt:
