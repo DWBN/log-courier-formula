@@ -22,7 +22,7 @@ log-courier-service:
 /etc/log-courier/selfsigned.crt:
   file.managed:
     - source: salt://log-courier/selfsigned.crt
-    - user: logstash
+    - user: root
     - require:
       - pkg: log-courier
 
@@ -30,6 +30,6 @@ log-courier-service:
 /etc/log-courier/log-courier.conf:
   file.managed:
     - source: salt://log-courier/log-courier.conf
-    - user: logstash
+    - user: root
     - require:
       - pkg: log-courier
