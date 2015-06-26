@@ -22,7 +22,7 @@ log-courier:
       - pkg: log-courier
 
 
-/etc/log-courier/log-courier.conf
+/etc/log-courier/log-courier.conf:
   file.managed:
     - source: salt://log-courier/log-courier.conf
     - user: logstash
