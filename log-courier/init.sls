@@ -22,13 +22,6 @@ log-courier:
       - pkg: log-courier
 
 
-/etc/log-courier/selfsigned.crt:
-  file.mananegd:
-    - source: salt://log-courier/selfsigned.crt
-    - user: logstash
-    - require:
-      - pkg: log-courier
-
 /etc/log-courier/log-courier.conf
   file.managed:
     - source: salt://log-courier/log-courier.conf
