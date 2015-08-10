@@ -15,7 +15,7 @@ log-courier-service:
     - enable: True
     - reload: True
     - watch:
-      - pkg: log-courier
+      - file: /etc/log-courier/log-courier.conf
 
 
 
@@ -33,8 +33,11 @@ log-courier-service:
     - user: root
     - require:
       - pkg: log-courier
+      - file: /etc/log-courier/selfsigned.crt
 
 add-runlevel:
   cmd.run:
     - name: update-rc.d log-courier defaults
     - creates: /etc/rc2.d/S20log-courier
+    - require:
+      - pkg: log-courier
