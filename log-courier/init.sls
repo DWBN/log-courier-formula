@@ -16,6 +16,10 @@ log-courier-service:
     - reload: True
     - watch:
       - file: /etc/log-courier/log-courier.conf
+    - require:
+      - file: /etc/log-courier/log-courier.conf
+      - file: /etc/log-courier/selfsigned.crt
+      - cmd: add-runlevel
 
 
 
