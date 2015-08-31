@@ -13,6 +13,7 @@ log-courier-service:
   service.running:
     - name: log-courier
     - enable: True
+    - reload: True
     - watch:
       - file: /etc/log-courier/log-courier.conf
     - require:
@@ -40,7 +41,7 @@ log-courier-service:
 
 add-runlevel:
   cmd.run:
-    - name: update-rc.d log-courier defaults; sleep 2
+    - name: update-rc.d log-courier defaults && service log-courier start
     - creates: /etc/rc2.d/S20log-courier
     - require:
       - pkg: log-courier
