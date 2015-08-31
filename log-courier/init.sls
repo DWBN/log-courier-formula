@@ -13,7 +13,7 @@ log-courier-service:
   service.running:
     - name: log-courier
     - enable: True
-    - reload: True
+    - reload: False
     - watch:
       - file: /etc/log-courier/log-courier.conf
     - require:
