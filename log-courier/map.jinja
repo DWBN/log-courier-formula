@@ -1,0 +1,8 @@
+{% set log-courier = salt['grains.filter_by']({
+    'default': {
+        'server': {
+            'address': 'ELK',
+            'ip': '217.160.133.141'
+        }
+    },
+}, merge=salt['pillar.get']('log-courier'), default='default') %}

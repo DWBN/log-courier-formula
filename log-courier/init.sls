@@ -1,9 +1,18 @@
-ppa-sauce:
+{%- from "log-courier/map.jinja" import log-courier with context -%}
+
+
+pa-sauce:
   pkgrepo.managed:
     - ppa: devel-k/log-courier
     - require_in:
       - pkg: log-courier
 
+
+The-ELK-Server:
+  host.present:
+    - ip: {{ log-courier.server.ip }}
+    - names:
+      - {{ log-courier.server.address }}
 
 log-courier-pkg:
   pkg.installed:
