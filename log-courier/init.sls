@@ -47,6 +47,7 @@ log-courier-service:
     - require:
       - pkg: log-courier
       - file: /etc/log-courier/selfsigned.crt
+    - template: jinja
 
 add-runlevel:
   cmd.run:
