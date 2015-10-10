@@ -1,3 +1,4 @@
+{% from "log-courier/map.jinja" import log-courier with context %}
 
 
 ppa-sauce:
