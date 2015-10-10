@@ -1,4 +1,4 @@
-{%- from "log-courier/map.jinja" import log-courier with context -%}
+{%- from "log-courier/map.jinja" import log-courier with context %}
 
 
 pa-sauce:
