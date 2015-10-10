@@ -1,7 +1,7 @@
-{%- from "log-courier/map.jinja" import log-courier with context %}
+{% from "log-courier/map.jinja" import log-courier with context %}
 
 
-pa-sauce:
+ppa-sauce:
   pkgrepo.managed:
     - ppa: devel-k/log-courier
     - require_in:
