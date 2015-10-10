@@ -1,4 +1,4 @@
-{% from "log-courier/map.jinja" import "log-courier" with context %}
+{% from "log-courier/map.jinja" import courier with context %}
 
 
 ppa-sauce:
@@ -10,9 +10,9 @@ ppa-sauce:
 
 The-ELK-Server:
   host.present:
-    - ip: {{ log-courier.server.ip }}
+    - ip: {{ courier.server.ip }}
     - names:
-      - {{ log-courier.server.address }}
+      - {{ courier.server.address }}
 
 log-courier-pkg:
   pkg.installed:
