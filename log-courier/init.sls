@@ -52,6 +52,7 @@ log-courier-service:
 add-runlevel:
   cmd.run:
     - name: update-rc.d log-courier defaults && service log-courier start
-    - creates: /etc/rc2.d/S20log-courier
     - require:
+      - pkg: log-courier
+    - onchanges:
       - pkg: log-courier
